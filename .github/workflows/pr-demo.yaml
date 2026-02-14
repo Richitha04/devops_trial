@@ -1,0 +1,20 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print a message
+        run: echo "Pull Request triggered this workflow!"
+
+      - name: List files
+        run: ls -la
